@@ -11,21 +11,14 @@
             margin-bottom: 30px;
         }
     </style>
-</head>
-<body>
-<div th:replace="fragments/header :: header">...</div>
-<!--<div th:replace="fragments/layout.html :: layout">...</div>-->
-<!--<img src="../static/img/bank.jpg" height="358" width="636"/>-->
-<img th:src="@{~/static/img/bank.jpg}"/>
-<!--<div layout:fragment="content" th:remove="tag">-->
-<!--    <h1>Hello Customer, Welcome to SMART bank online system </h1>-->
-<!--    <p>This is an unsecured page, but you can access the secured pages after authenticating.</p>-->
-<!--    <ul>-->
-<!--        <li>Go to the <a href="/user" th:href="@{/user}">secured pages</a></li>-->
-<!--    </ul>-->
-<!--</div>-->
 
-<!--<img src="/static/img/banks-in-nigeria.jpg" height="721" width="1280"/>-->
+
+
+</head>
+
+<div th:replace="fragments/header :: header">...</div>
+<body background="bankimg.png">
+
 <div th:replace="fragments/footer :: footer">...</div>
 </body>
 </html>

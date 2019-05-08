@@ -1,0 +1,8 @@
+.product-preview-container {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 550px;
+    margin: 10px ;
+    display: inline-block;
+    text-align:left;
+}

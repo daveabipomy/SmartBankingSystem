@@ -24,4 +24,17 @@ public class AccountServiceImp implements AccountService {
 //        return  accountRepository.findAll();
         return  null;
     }
+
+    @Override
+    public int accountAuthentication(String username, String password) {
+        int count=0;
+        for(Account test:accountRepository.findAll())
+        {
+            if(test.name.equals(username) && test.password.equals(password))
+            {
+                count+=1;
+            }
+        }
+        return  count;
+    }
 }

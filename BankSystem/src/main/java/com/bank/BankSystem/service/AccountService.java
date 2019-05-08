@@ -5,4 +5,5 @@ import com.bank.BankSystem.model.Account;
 public interface AccountService {
     public  Account createAccount(Account account);
     public Account getAccount();
+    public int accountAuthentication(String username, String password);
 }

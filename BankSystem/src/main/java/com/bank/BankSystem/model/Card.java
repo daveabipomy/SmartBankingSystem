@@ -1,0 +1,19 @@
+package com.bank.BankSystem.model;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
+
+@Entity
+public class Card {
+    @Id
+    private int cardnumber;
+    private LocalDate expireDate;
+
+    @OneToMany(mappedBy = "card",cascade = CascadeType.REMOVE,orphanRemoval = true)
+    @JsonManagedReference(value="account-card")
+    @Column(name = "card",nullable = false)
+    private List<NewAccount> accounts;
+}

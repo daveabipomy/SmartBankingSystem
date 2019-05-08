@@ -4,63 +4,54 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
-    <style>
-        .navigation-order{
-            margin-bottom: 30px;
-        }
-    </style>
+
+    <link rel="stylesheet" href="/bootstrap.min.css" th:href="@{/bootstrap.min.css}"    media="screen"/>
+
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">-->
+
+    <link rel="stylesheet" href="/border.css" media="screen"/>
+
+
+
 </head>
 <body>
-
-
-
-<!--<form action="#" th:action="@{rest/account}" th:object="${account}" method="get">-->
-<!--    <label for="username">Name</label>-->
-<!--    <input type="text" th:field="*{userName}" id="userName" placeholder="userName">-->
-<!--    <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>-->
-
-<!--    <label for="email">Email</label>-->
-<!--    <input type="text" th:field="*{email}" id="email" placeholder="email">-->
-<!--    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>-->
-
-<!--    <label for="password">Password</label>-->
-<!--    <input type="text" th:field="*{password}" id="password" placeholder="password">-->
-<!--    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
-
-<!--    <input type="submit" value="Create Account">-->
-<!--</form>-->
-
-<!--<h1>Notes</h1>-->
-
-<!--<p>-->
-<!--    <a href="/rest/account" th:href="@{/rest/account}">Create</a>-->
-<!--</p>-->
 <div th:replace="fragments/header :: header">...</div>
-<h1>Customer Information</h1>
-<div>
 
-<form class="form-group" action="/rest/account" th:action="@{/rest/account}" method="post">
-<!--    <input th:type="hidden" name="id" th:field="${notes.id}" />-->
+
+<link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+<div>
     <div class="col-md-6 col-md-offset-3">
-        <label for="name">Name</label>
+        <h1>Customer Information</h1>
+    </div>
+<form class="form-group" action="/smart/account" th:action="@{/smart/account}" method="post">
+<!--    <input th:type="hidden" name="id" th:field="${notes.id}" />-->
+    <div class="product-preview-container">
+        <div class="col-md-3 col-md-offset-1">
+        <label for="name">Name Test</label>
+        <input type="text" class="form-control" id="tname" th:field="${account.name}" />
+
+    </div>
+    <div class="col-md-6 col-md-offset-1">
+        <label for="tname">Name</label>
         <input type="text" class="form-control" id="name" th:field="${account.name}" />
     </div>
 
 
 
-    <div class="form-group">
+    <div class="col-md-6 col-md-offset-1">
         <label for="email">Email</label>
         <input type="text" class="form-control" id="email" th:field="${account.email}"></input>
     </div>
 
-    <div class="form-group">
+    <div class="col-md-6 col-md-offset-1">
         <label for="password">Passw0rd</label>
         <input type="text" class="form-control" id="password" th:field="${account.password}"></input>
     </div>
 
+    <div class="col-md-6 col-md-offset-3">
     <button type="submit" class="btn btn-primary">Save</button>
-    <a href="#" th:href="@{/rest/account}" class="btn btn-danger" role="button">Cancel</a>
+    <a href="#" th:href="@{/smart/account}" class="btn btn-danger" role="button">Cancel</a>
+    </div>
 </form>
 </div>
 <div th:replace="fragments/footer :: footer">...</div>
