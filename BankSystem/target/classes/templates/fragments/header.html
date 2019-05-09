@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" media="screen"/>-->
 <!--    <link rel="stylesheet" href="/css/bootstrap-grid.css" media="screen"/>-->
 
 </head>
 <body>
 <th:block th:fragment="header">
-    <nav class="navbar navbar-default navbar-static-top">
 
-<!--         pull-left-->
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-<!--            <div class="navbar-header">-->
-<!--                <a class="navbar-brand" th:href="@{/}">-->
-<!--                    <img th:src="@{/img/bank.jpg}" alt="memorynotfound logo"/>-->
-<!--                </a>-->
-<!--            </div>-->
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
@@ -30,7 +24,7 @@
                         <a th:href="@{/}">Contact</a>
                     </li>
                     <li class="active">
-                        <a th:href="@{/smart/account}">New Customer</a>
+                        <a th:href="@{/smart/customer}">New Customer</a>
                     </li>
                     <li class="active">
                         <a th:href="@{/}">About Us</a>
@@ -38,13 +32,6 @@
                     <li class="active">
                         <a th:href="@{/}">Help</a>
                     </li>
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
 
                     <li class="active pull-right">
                         <a th:href="@{/smart/login}">Log In</a>

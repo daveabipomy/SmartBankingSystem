@@ -11,12 +11,13 @@ import java.util.List;
 @Table(name="newaccount")
 public class NewAccount {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
     private String accountNumber;
     private String accountType;
     private LocalDate openeingDate;
     private  LocalDate closingDate;
     private  String status;
-    private  double flowLimit;
     private double balance;
 
     @ManyToOne(targetEntity = Customer.class)

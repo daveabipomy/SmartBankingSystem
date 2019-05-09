@@ -1,9 +1,9 @@
 package com.bank.BankSystem.service;
 
-import com.bank.BankSystem.model.Account;
+import com.bank.BankSystem.model.Customer;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface AccountService {
-    public  Account createAccount(Account account);
-    public Account getAccount();
-    public int accountAuthentication(String username, String password);
+//    public int accountAuthentication(String username, String password);
+    public Customer requestNewAccount(Customer customer, MultipartFile file);
 }

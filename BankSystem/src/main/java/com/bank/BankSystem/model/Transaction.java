@@ -12,11 +12,13 @@ public class Transaction {
     private String transactionType;
     private LocalDate transactionDate;
     private double amount;
-    @OneToOne
-    private NewAccount fromWho;
-    @OneToOne
-//    @Column(name = "towho",nullable = true)
-    private NewAccount toWho;
+
+
+//    @ManyToOne
+    private String fromWho;
+
+//    @ManyToOne
+    private String toWho;
 
 
     @ManyToOne(targetEntity = NewAccount.class)
