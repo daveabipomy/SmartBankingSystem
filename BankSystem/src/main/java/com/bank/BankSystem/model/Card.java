@@ -9,11 +9,13 @@ import java.util.List;
 @Entity
 public class Card {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private int cardnumber;
     private LocalDate expireDate;
 
     @OneToMany(mappedBy = "card",cascade = CascadeType.REMOVE,orphanRemoval = true)
     @JsonManagedReference(value="account-card")
     @Column(name = "card",nullable = false)
-    private List<NewAccount> accounts;
+    private List<Account> accounts;
 }

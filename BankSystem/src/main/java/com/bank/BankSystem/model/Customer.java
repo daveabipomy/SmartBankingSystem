@@ -3,7 +3,6 @@ package com.bank.BankSystem.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -88,11 +87,11 @@ public class Customer {
         this.approval = approval;
     }
 
-    public List<NewAccount> getAccounts() {
+    public List<Account> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(List<NewAccount> accounts) {
+    public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
     }
 
@@ -141,7 +140,7 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer",orphanRemoval = true,cascade = CascadeType.ALL)
     @JsonManagedReference(value="customer-account")
-    private List<NewAccount> accounts;
+    private List<Account> accounts;
 
     @OneToOne
     private Login login;

@@ -2,6 +2,7 @@ package com.bank.BankSystem.controller;
 
 
 import com.bank.BankSystem.model.Customer;
+import com.bank.BankSystem.model.Login;
 import com.bank.BankSystem.service.impl.AccountServiceImp;
 //import jdk.vm.ci.meta.Value;
 import com.bank.BankSystem.service.impl.UploadServiceImpl;
@@ -46,6 +47,24 @@ public class AccountController {
     return "NewCustomerRequestForm";
     }
 
+	@RequestMapping("/register")
+    public String register(Customer customer){
+        return "Register";
+    }
+
+
+
+    @RequestMapping(value = {"/register"},method=RequestMethod.POST)
+    public  String register(@RequestParam String email, @RequestParam String password,@RequestParam String accountnumber)
+    {
+        Login login=new Login();
+        login.setUserName(email);
+        login.setPassword(password);
+        login.setRole("Customer");
+        accountService.register(login,accountnumber);
+        return "Register";
+
+    }
 
     @RequestMapping(value={"/customer"},headers=("content-type=multipart/*"),method = RequestMethod.POST)
     public String requestForm(@Valid Customer customer, BindingResult result, Model model,@RequestParam("file") MultipartFile file)

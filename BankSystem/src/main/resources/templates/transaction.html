@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New Customer Request Form</title>
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+<!--    <link rel="stylesheet" href="/border.css" media="screen"/>-->
+</head>
+<body>
+<div th:replace="fragments/header :: header">...</div>
+
+<div class="container"><h1>Transaction</h1></div>
+<div id="exTab1" class="container">
+    <ul  class="nav nav-pills">
+        <li class="active">
+            <a  href="#deposit" data-toggle="tab">Deposit</a>
+        </li>
+        <li><a href="#2a" data-toggle="tab">Withdraw</a>
+        </li>
+        <li><a href="#3a" data-toggle="tab">Transfer</a>
+        </li>
+    </ul>
+
+    <div class="tab-content clearfix">
+
+        <div class="tab-pane active" id="deposit">
+            <form action="#" th:action="@{/smart/deposit}" method="post">
+            <div class="form-group" style="width: 350px">
+                    <label for="accountNumber">Account Number</label>
+                    <input type="text" class="form-control" id="accountNumber" name="accountNumber"  placeholder="Customer account number">
+                </div>
+                <div class="form-group " style="width: 350px" >
+                    <label for="amount">Amount</label>
+                    <input type="number" class="form-control" id="amount" name="amount" placeholder="Deposit Amount">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+
+
+        <div class="tab-pane" id="2a">
+            <form action="#" th:action="@{/smart/withdraw}" method="post">
+                <div class="form-group" style="width: 350px">
+                    <label for="accountNumber">Account Number</label>
+                    <input type="text" class="form-control" id="waccountNumber" name="waccountNumber"  placeholder="Customer account number">
+                </div>
+                <div class="form-group " style="width: 350px" >
+                    <label for="amount">Amount</label>
+                    <input type="number" class="form-control" name="wamount" id="wamount" placeholder="Withdrawal Amount">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>        </div>
+
+        <div class="tab-pane" id="3a">
+            <form action="#" th:action="@{/smart/transfer}" method="post">
+                <div class="form-group" style="width: 350px">
+                    <label for="accountNumber">From Account Number</label>
+                    <input type="text" class="form-control" name="taccountNumber" id="taccountNumber"  placeholder="Sender account number">
+                </div>
+                <div class="form-group" style="width: 350px">
+                    <label for="accountNumber">To Account Number</label>
+                    <input type="text" class="form-control"  name="toaccountNumber" id="toaccountNumber"  placeholder="Reciver account number">
+                </div>
+                <div class="form-group " style="width: 350px" >
+                    <label for="amount">Amount</label>
+                    <input type="number" class="form-control" name="tamount" id="tamount" placeholder="Transfer Amount">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<div th:replace="fragments/footer :: footer">...</div>
+</body>
+</html>
